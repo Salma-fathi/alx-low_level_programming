@@ -6,32 +6,29 @@
  *
  * Return: Always 0.
  */
-int main(void) {
-    for (int i = 0; i < 100; i++) {
-        int first_num = i / 10;
-        int second_num = i % 10;
+int main(void)
+{
+int i, j;
 
-        for (int j = 0; j < 100; j++) {
-            int third_num = j / 10;
-            int fourth_num = j % 10;
-
-            if ((first_num < third_num) || (first_num == third_num && second_num < fourth_num)) {
-                putchar(first_num / 10 + '0');
-                putchar(first_num % 10 + '0');
-                putchar(' ');
-                putchar(second_num / 10 + '0');
-                putchar(second_num % 10 + '0');
-                putchar(',');
-                putchar(' ');
-                putchar(third_num / 10 + '0');
-                putchar(third_num % 10 + '0');
-                putchar(' ');
-                putchar(fourth_num / 10 + '0');
-                putchar(fourth_num % 10 + '0');
-                putchar(',');
-                putchar(' ');
-            }
-        }
-    }
-      return 0;
+for (i = 0; i < 100; i++)
+{
+for (j = 0; j < 100; j++)
+{
+if (i < j)
+{
+putchar((i / 10) + 48);
+putchar((i % 10) + 48);
+putchar(' ');
+putchar((j / 10) + 48);
+putchar((j % 10) + 48);
+if (i != 98 || j != 99)
+{
+putchar(',');
+putchar(' ');
+}
+}
+}
+}
+putchar('\n');
+return (0);
 }
