@@ -8,22 +8,24 @@
  *
  * Return: a pointer to the resulting string dest
  */
-char *_strncat(char *dest, const char *src, int n)
+char *_strncat(char *dest, char *src, int n)
 {
-    char *ptr = dest;
-    
-    while (*ptr != '\0')
-        ptr++;
-    
-    while (*src != '\0' && n > 0)
-    {
-        *ptr = *src;
-        ptr++;
-        src++;
-        n--;
-    }
-    
-    *ptr = '\0';
-    
-    return dest;
+	int i, j;
+
+	i = 0;
+	j = 0;
+
+	while (dest[i] != '\0')
+		i++;
+
+	while (src[j] != '\0' && j < n)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+
+	dest[i] = '\0';
+
+	return (dest);
 }
