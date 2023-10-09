@@ -11,4 +11,4 @@ void errors(void);
 int _strlen(char *s);
 int is_digit(char *s);
 
-#endif11;rgb:0000/0000/0000
+#endif
