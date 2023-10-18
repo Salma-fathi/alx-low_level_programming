@@ -1,60 +1,61 @@
+#include <stdlib.h>
 #include <stdio.h>
-#include "main.h"
 #include <ctype.h>
 #include <string.h>
-#include <stdlib.h>
+
 /**
- * verifyNum - check if the string has digits
- * @s: string
- * Return: 0
- */
-int verifyNum(char *s)
+ * isNum - check if string array is num
+ * @num: string to check
+ * Return: 0 if it's a number
+ *         1 if it's not a number
+*/
+
+int isNum(char num[])
 {
-	unsigned int i;
+	int i, l = strlen(num);
 
-	i = 0;
-	while (i < strlen(s))
+	for (i = 0; i < l; i++)
 	{
-		if (!isdigit(str[i]))
-		{
-			return (0);
-		}
-
-		count++;
+		if (!isdigit(num[i]))
+			return (1);
 	}
-	return (1);
+	return (0);
 }
 
+
 /**
- * main - sums the numbers on the command line
- * @argc: argument count
- * @argv: argument vector
- * Return: 0
- */
+ * main - a program that adds positive numbers
+ *
+ * @argc: holds the number of arguments passed
+ * @argv: array pointer that holds the arguments passed
+ *
+ * Return: Always 0 (Success)
+*/
 
 int main(int argc, char *argv[])
 {
+	int i, sum;
 
-	int count;
-	int i;
-	int sum = 0;
-
-	count = 1;
-	while (count < argc)
+	if (argc == 1)
 	{
-		if (verifyNum(argv[count]))
-		{
-			i = atoi(argv[count]);
-			sum += i;
-		}
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
-
-		count++;
+		printf("0\n");
 	}
-	printf("%d\n", sum);
+	else
+	{
+		sum = 0;
+		for (i = 1; i < argc; i++)
+		{
+			if (isNum(argv[i]) == 0)
+			{
+				sum += atoi(argv[i]);
+			}
+			else
+			{
+				printf("Error\n");
+				return (1);
+			}
+		}
+		printf("%d\n", sum);
+	}
 	return (0);
 }
