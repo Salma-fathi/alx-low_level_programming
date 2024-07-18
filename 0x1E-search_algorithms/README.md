@@ -1,7 +1,7 @@
 # 0x1E. C - Search Algorithms
 
 ## Description
-This project involves implementing various search algorithms in C. The primary goal is to gain a deep understanding of different search techniques, their efficiencies, and their applications. The project includes both mandatory and advanced tasks, which involve writing C functions for different search algorithms and analyzing their time and space complexities.
+This project involves implementing various search algorithms in C. The primary goal is to gain a deep understanding of different search techniques, their efficiencies, and their applications. The project includes both mandatory and advanced tasks, which involve writing CC functions for different search algorithms and analyzing their time and space complexities.
 
 ## Project Details
 
